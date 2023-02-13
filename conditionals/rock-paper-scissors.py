@@ -8,16 +8,9 @@ Scissors = 'Scissors'
 
 moveArray = [Rock, Paper, Scissors]
 
-computer_choice = random.choice(moveArray)
-print('computerChoice: ' + computer_choice)
-
-user_choice = ''
-
-while user_choice.strip() =='' : 
-    user_choice = input('Do you want Rock, Paper or Scissors? \n');
-
-
-def checkForPlayerWin(choice):
+def checkForPlayerWin(choice, computer_choice):
+    print(choice == computer_choice)
+    print('computer choice: ', computer_choice)
     if choice.capitalize() == computer_choice :
         print('Game tied')
     elif choice.capitalize() == Rock and computer_choice == Scissors :
@@ -29,5 +22,16 @@ def checkForPlayerWin(choice):
     else :
         print('Computer wins')
 
-checkForPlayerWin(user_choice)
+def runGame() :
+    computer_choice = random.choice(moveArray).capitalize()
+
+    user_choice = ''
+
+    while user_choice.strip() =='' : 
+        user_choice = input('Do you want Rock, Paper or Scissors? \n');
+
+    checkForPlayerWin(user_choice, computer_choice)
+
+
+runGame()
 
