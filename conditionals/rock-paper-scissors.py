@@ -1,12 +1,17 @@
 from enum import Enum
-
-computer_choice = 'Paper'
-user_choice = ''
+import random
 
 
 Rock = 'Rock'
 Paper = 'Paper'
 Scissors = 'Scissors'
+
+moveArray = [Rock, Paper, Scissors]
+
+computer_choice = random.choice(moveArray)
+print('computerChoice: ' + computer_choice)
+
+user_choice = ''
 
 while user_choice.strip() =='' : 
     user_choice = input('Do you want Rock, Paper or Scissors? \n');
